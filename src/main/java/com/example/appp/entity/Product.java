@@ -32,6 +32,9 @@ public class Product {
     @Column(name = "Category", nullable = false)
     private String category;
 
+    @Column(name = "ProductCount", nullable = false)
+    private Integer count;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

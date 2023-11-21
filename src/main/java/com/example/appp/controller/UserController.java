@@ -27,4 +27,5 @@ public class UserController {
     public ResponseEntity<User> registerUserAsManager(@RequestBody UserDto userDto){
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUserAsManager(userDto));
     }
+
 }
