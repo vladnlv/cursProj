@@ -49,12 +49,12 @@ public class ProductController {
         return ResponseEntity.ok(productService.findAllCategories());
     }
     @GetMapping("/products")
-    public Page<Product> getAllProductsByCategory(
+    public ResponseEntity<List<Product>> getAllProductsByCategory(
             @RequestParam String category,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
 
         Pageable pageable = PageRequest.of(page, size);
-        return productService.findAllByCategory(category, pageable);
+        return ResponseEntity.ok(productService.findAllByCategory(category, pageable).getContent());
     }
 }
